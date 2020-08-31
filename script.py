@@ -19,16 +19,16 @@ e1 = Entry(window, textvariable=title_text)
 e1.grid(row=0, column=1)
 
 author_text = StringVar()
-e1 = Entry(window, textvariable=author_text)
-e1.grid(row=0, column=3)
+e2 = Entry(window, textvariable=author_text)
+e2.grid(row=0, column=3)
 
 year_text = StringVar()
-e1 = Entry(window, textvariable=year_text)
-e1.grid(row=1, column=1)
+e3 = Entry(window, textvariable=year_text)
+e3.grid(row=1, column=1)
 
 isbn_text = StringVar()
-e1 = Entry(window, textvariable=isbn_text)
-e1.grid(row=1, column=3)
+e4 = Entry(window, textvariable=isbn_text)
+e4.grid(row=1, column=3)
 
 window.mainloop()
 
