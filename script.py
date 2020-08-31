@@ -41,14 +41,19 @@ scroll_bar1.configure(command=list1.yview)
 
 b1 = Button(window, text="View All", width=12)
 b1.grid(row=2, column=3) 
+
 b2 = Button(window, text="Search entry", width=12)
 b2.grid(row=3, column=3) 
+
 b3 = Button(window, text="Add entry", width=12)
 b3.grid(row=4, column=3) 
+
 b4 = Button(window, text="Update", width=12)
 b4.grid(row=5, column=3) 
+
 b5 = Button(window, text="Delete", width=12)
 b5.grid(row=6, column=3) 
+
 b6 = Button(window, text="Close", width=12)
 b6.grid(row=7, column=3) 
 
