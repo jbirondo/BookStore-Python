@@ -3,6 +3,12 @@ import backend
 
 window= Tk()
 
+def view_command():
+    list1.delete(0, END)
+    for row in backend.view():
+        list1.insert(END, row)
+    
+
 l1 = Label(window, text="Title")
 l1.grid(row=0, column=0)
 
@@ -40,7 +46,7 @@ scroll_bar1.grid(row=2, column=2, rowspan=6)
 list1.configure(yscrollcommand=scroll_bar1.set)
 scroll_bar1.configure(command=list1.yview)
 
-b1 = Button(window, text="View All", width=12)
+b1 = Button(window, text="View All", width=12, command=view_command)
 b1.grid(row=2, column=3) 
 
 b2 = Button(window, text="Search entry", width=12)
