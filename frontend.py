@@ -10,7 +10,8 @@ def view_command():
 
 def search_command():
     list1.delete(0, END)
-    
+    for row in backend.search(title=title_text.get(), author=author_text.get(), year=year_text.get(), isbn=isbn_text.get()):
+        list1.insert(END, row)
     
 
 l1 = Label(window, text="Title")
@@ -33,11 +34,11 @@ author_text = StringVar()
 e2 = Entry(window, textvariable=author_text)
 e2.grid(row=0, column=3)
 
-year_text = IntVar()
+year_text = StringVar()
 e3 = Entry(window, textvariable=year_text)
 e3.grid(row=1, column=1)
 
-isbn_text = IntVar()
+isbn_text = StringVar()
 e4 = Entry(window, textvariable=isbn_text)
 e4.grid(row=1, column=3)
 
