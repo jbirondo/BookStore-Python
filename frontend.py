@@ -1,7 +1,7 @@
 from tkinter import *
-from database import Database
+from backend import Database
 
-database = Database()
+database = Database("books.db")
 
 window= Tk()
 
