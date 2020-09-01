@@ -10,9 +10,17 @@ def view_command():
 
 def search_command():
     list1.delete(0, END)
-    for row in backend.search(title=title_text.get(), author=author_text.get(), year=year_text.get(), isbn=isbn_text.get()):
+    for row in backend.search(
+        title=title_text.get(),
+        author=author_text.get(), 
+        year=year_text.get(), 
+        isbn=isbn_text.get()):
         list1.insert(END, row)
-    
+
+def add_command():
+    list1.delete(0, END)
+    backend.insert(title_text.get(), author_text.get(), year_text.get(), isbn_text.get())
+    list1.insert(END, (title_text.get(), author_text.get(), year_text.get(), isbn_text.get()))
 
 l1 = Label(window, text="Title")
 l1.grid(row=0, column=0)
@@ -57,7 +65,7 @@ b1.grid(row=2, column=3)
 b2 = Button(window, text="Search entry", width=12, command=search_command)
 b2.grid(row=3, column=3) 
 
-b3 = Button(window, text="Add entry", width=12)
+b3 = Button(window, text="Add entry", width=12, command=add_command)
 b3.grid(row=4, column=3) 
 
 b4 = Button(window, text="Update", width=12)
