@@ -2,11 +2,11 @@ import sqlite3
 
 class Database:
     def __init__(self, db):
-        conn = sqlite3.connect(db)
-        cur = conn.cursor()
-        cur.execute("CREATE TABLE IF NOT EXISTS book (id INTEGER PRIMARY KEY, title TEXT, author TEXT, year INTEGER, isbn INTEGER)")
-        conn.commit()
-        conn.close()
+        self.conn = sqlite3.connect(db)
+        self.cur = conn.cursor()
+        self.cur.execute("CREATE TABLE IF NOT EXISTS book (id INTEGER PRIMARY KEY, title TEXT, author TEXT, year INTEGER, isbn INTEGER)")
+        self.conn.commit()
+        self.conn.close()
 
     def insert(self, title, author, year, isbn):
         self.cur.execute("INSERT INTO book VALUES (NULL, ?,?,?,?)", (title, author, year, isbn))
