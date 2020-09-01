@@ -22,7 +22,7 @@ def view():
     conn.close()
     return rows
 
-def search(title, author, year, isbn):
+def search(title="", author="", year="", isbn=""):
     conn = sqlite3.connect("books.db")
     cur = conn.cursor()
     cur.execute("SELECT * FROM book WHERE title=? OR author=? OR year=? OR isbn=?",
@@ -32,5 +32,6 @@ def search(title, author, year, isbn):
     return rows
 
 connect()
-# insert("The Sea", "John Tablet", 1918, 1111111)
+# insert("The Earth", "John Smith", 1918, 2222222)
 # print(view())
+# print(search(author="John Smith"))
