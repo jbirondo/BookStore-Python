@@ -38,6 +38,14 @@ def get_selected_row(event):
 def delete_command():
     backend.delete(selected_tuple[0])
 
+def update_command():
+    backend.update(
+        id=selected_tuple[0],
+        title=title_text.get(), 
+        author=author_text.get(), 
+        year=year_text.get(), 
+        isbn=isbn_text.get()
+        )
 
 l1 = Label(window, text="Title")
 l1.grid(row=0, column=0)
@@ -87,7 +95,7 @@ b2.grid(row=3, column=3)
 b3 = Button(window, text="Add entry", width=12, command=add_command)
 b3.grid(row=4, column=3) 
 
-b4 = Button(window, text="Update", width=12)
+b4 = Button(window, text="Update", width=12, command=update_command)
 b4.grid(row=5, column=3) 
 
 b5 = Button(window, text="Delete", width=12, command=delete_command)
