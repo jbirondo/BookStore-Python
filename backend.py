@@ -33,5 +33,5 @@ class Database:
                     (title, author, year, isbn, id))
         self.conn.commit()
 
-# Database.__init__()
-
+    def __del__(self):
+        self.conn.close()
